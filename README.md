@@ -85,7 +85,6 @@ DataCortex.neura.purgeAllCache()
 ```
 
 ## Let the DataCortex auto-clean up the cache
-
 ```swift
 DataCortex.neura.purgeStaleNeura()
 ```
