@@ -1,7 +1,9 @@
 ![neura](https://themindunleashed.com/wp-content/uploads/2015/08/squirrel.jpg)
 
 # DataCortex
-AWS S3 is easy! A streamlined class to upload, download, and manage caches for files on AWS S3
+AWS S3 is easy! A streamlined class to upload, download, and manage caches for files on AWS S3.
+
+Taken from a project I am working to make your life ez pz.
 
 ## Configuring
 
@@ -13,7 +15,15 @@ AWS S3 is easy! A streamlined class to upload, download, and manage caches for f
 
 ## PUT Images
 
+```swift
+DataCortex.neura.setImage(image: i,
+                          for: ident,
+                          completion: { (image, code, progress) in
+                                          print("image: \(ident) code: \(code) progress: \(progress)")
+                                        })
 ```
+A full copy-pasta for using `PHAsset`
+```swift
 let images: [PHAsset] = .... from an image picker
 let manager = PHImageManager.default()
 let options = PHImageRequestOptions()
@@ -51,7 +61,7 @@ images.compactMap({$0.asset}).forEach { (asset) in
 
 ## GET Images
 
-```
+```swift
 let _ = DataCortex.neura.image(for: imageKey) { (image, recallCode, progress) in
                                                     if recallCode != .loaded {
                                                         return
@@ -64,18 +74,18 @@ let _ = DataCortex.neura.image(for: imageKey) { (image, recallCode, progress) in
 
 ## Check Cache Size
 
-```
+```swift
 cacheSizeButton?.setTitle("Clear Cached Media: \(DataCortex.neura.sizeOfMediaCache())MB", for: UIControl.State.normal)
 ```
 
 ## Clear Cache
 
-```
+```swift
 DataCortex.neura.purgeAllCache()
 ```
 
 ## Let the DataCortex auto-clean up the cache
 
-```
+```swift
 DataCortex.neura.purgeStaleNeura()
 ```
