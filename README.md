@@ -5,6 +5,11 @@ AWS S3 is easy! A streamlined class to upload, download, and manage caches for f
 
 Taken from a project I am working to make your life ez pz.
 
+[x] Images, with efficient compression
+
+
+[ ] Videos, with efficient compression
+
 ## Configuring
 
 0. For the following step, please use the identity pool technique, it is confusing AF but it really is better
